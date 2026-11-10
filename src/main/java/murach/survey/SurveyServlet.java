@@ -5,8 +5,8 @@ import java.io.*;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 
-import murach.business.User;
 import murach.business.Survey;
+import murach.business.User;
 
 public class SurveyServlet extends  HttpServlet{
     @Override 
@@ -31,17 +31,22 @@ public class SurveyServlet extends  HttpServlet{
                 
                 String heardAbout = request.getParameter("heardAbout");
                 String contactType = request.getParameter("contactType");
-                String receiveOffers = request.getParameter("receiveOffers") != null ? "Yes" : "No";
-                String receiveAnnouncements = request.getParameter("receiveAnnouncements") != null ? "Yes" : "No";
-
-                Boolean wantOffers = receiveOffers != null;
-                Boolean wantAnnouncements = receiveAnnouncements != null;
+                boolean wantOffers = request.getParameter("receiveOffers") != null;
+                boolean wantAnnouncements = request.getParameter("receiveAnnouncements") != null;
 
                 User user = new User(firstName, lastName, email, dateOfBirth);
                 // UserDB.insert(user);
                 Survey survey = new Survey(user, heardAbout, wantOffers, wantAnnouncements, contactType);
 
+                String receiveOffers = wantOffers ? "Yes" : "No";
+                String receiveAnnouncements = wantAnnouncements ? "Yes" : "No";
+
+                request.setAttribute("user", user);
                 request.setAttribute("survey", survey);
+                request.setAttribute("heardAbout", heardAbout);
+                request.setAttribute("receiveOffers", receiveOffers);
+                request.setAttribute("receiveAnnouncements", receiveAnnouncements);
+                request.setAttribute("contactType", contactType);
                 url = "/thanks.jsp";
             }
 

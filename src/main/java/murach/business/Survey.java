@@ -4,22 +4,22 @@ import java.io.Serializable;
 
 public class Survey implements Serializable{
     private User user;
-    private String hearAbout;
+    private String heardAbout;
     private Boolean wantOffers;
     private Boolean wantAnnouncements;
     private String contactType;
 
     public Survey() {
         this.user = new User();
-        this.hearAbout = "";
+        this.heardAbout = "";
         this.wantOffers = false;
         this.wantAnnouncements = false;
         this.contactType = "";
     }
 
-    public Survey(User user, String hearAbout, Boolean wantOffers, Boolean wantAnnouncements, String contactType) {
+    public Survey(User user, String heardAbout, Boolean wantOffers, Boolean wantAnnouncements, String contactType) {
         this.user = user;
-        this.hearAbout = hearAbout;
+        this.heardAbout = heardAbout;
         this.wantOffers = wantOffers;
         this.wantAnnouncements = wantAnnouncements;
         this.contactType = contactType;
@@ -33,12 +33,12 @@ public class Survey implements Serializable{
         this.user = user;
     }
 
-    public String getHearAbout() {
-        return hearAbout;
+    public String getHeardAbout() {
+        return heardAbout;
     }
 
-    public void setHearAbout(String hearAbout) {
-        this.hearAbout = hearAbout;
+    public void setHeardAbout(String heardAbout) {
+        this.heardAbout = heardAbout;
     }
 
     public Boolean getWantOffers() {

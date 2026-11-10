@@ -27,17 +27,17 @@
     <section>
         <h1>Additional informations</h1>
             <label>You heard about us through:</label>
-            <span>${survey.heardAbout}</span><br>
+            <span>${heardAbout}</span><br>
             <label>Receive offers:</label>
-            <span>${survey.receiveOffers}</span><br>
+            <span>${receiveOffers}</span><br>
             <label>Receive announcement emails:</label>
-            <span>${survey.receiveAnnouncements}</span><br>
+            <span>${receiveAnnouncements}</span><br>
             <label>We may contact you through:</label>
-            <span>${survey.contact}</span><br>
+            <span>${contactType}</span><br>
     </section>
 
 <p>To enter another email address, click on the Back button in your browser or the Return button shown below.</p>
-    <form action="" method="get">
+    <form action="murach-survey" method="get">
         <input type="hidden" name="action" value="join">
         <input type="submit" value="Return">
     </form>
